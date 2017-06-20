@@ -1,0 +1,8 @@
+node_modules
+azure.err
+*.publishsettings
+npm-debug.log
+config.json
+iisnode.yml
+adal
+logs/*

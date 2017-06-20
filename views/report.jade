@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= config.title
+
+block scripts
+  div#direct-html.
+    <div id="divView">
+    </div>
+  script(type='text/javascript').
+    (function () {
+        var configuration = {
+            type: 'report',
+            accessToken: "#{token}",
+            embedUrl: "#{url}"
+          };
+        var iframe = document.getElementById('divView');
+        var report = powerbi.embed(iframe, configuration);
+        report.on("loaded", function (event) {
+            const page = report.page("#{page}");
+            page.setActive();
+        })
+        report.on('pageChanged', event => {
+          const page = event.details.newPage;
+          this.selectedPage = page;
+        });
+        }()
+    );

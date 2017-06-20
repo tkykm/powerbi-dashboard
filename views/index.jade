@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1= config.title
+
+block scripts
+  div#direct-html.
+    <div id="divView">
+    </div>
+    <div id="logView">
+    </div>
+  script(type='text/javascript').
+    (function () {
+          var configuration = {
+            type: 'dashboard',
+            accessToken: "#{token}",
+            embedUrl: "https://app.powerbi.com/dashboardEmbed",
+            id: "#{config.dashboardid}"
+          };
+          var iframe = document.getElementById('divView');
+          var dashboard = powerbi.embed(iframe, configuration);
+          dashboard.on("tileClicked", function (event) {
+            var f = document.forms["report"];
+            f.url.value = event.detail.reportEmbedUrl
+            f.page.value = event.detail.pageName
+            f.method = "POST"; 
+            f.submit(); 
+            return true;
+          });
+        }());
+
+  form(name="report" method="POST", action="/report")
+    input(type="hidden", name="url" value="")
+    input(type="hidden", name="page" value="")
