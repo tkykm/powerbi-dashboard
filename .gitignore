@@ -5,4 +5,5 @@ npm-debug.log
 config.json
 iisnode.yml
 adal
+!logs
 logs/*
