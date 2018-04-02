@@ -74,4 +74,9 @@ router.get('/getAToken', function(req, res, next) {
   });
 });
 
+router.get('/logout', function(req, res, next) {
+  setToken(null, null, 'logout')
+  res.redirect('/initialize')
+});
+
 module.exports = router;
