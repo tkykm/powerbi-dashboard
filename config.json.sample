@@ -1,0 +1,16 @@
+{                                                                                                              
+    "test": {                                                                                                  
+    },                                                                                                         
+    "development": {      
+     },                                                                                                         
+    "production": {                                                                                            
+        "redirecturl": "https://<domain>/getAToken",
+        "clientid": "",
+        "clientsecret": "",
+        "title": "",
+        "dashboardid": "",
+        "authmethod" : "direct",
+        "username": "",
+        "password": ""
+    }                                                    
+}        

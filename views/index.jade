@@ -1,8 +1,9 @@
 extends layout
 
 block content
-  h1= config.title
-
+  h1
+    a(href="/" style="text-decoration:none;") #{config.title}
+  p= "*This content may differ from the actual invoice"
 block scripts
   div#direct-html.
     <div id="divView">
