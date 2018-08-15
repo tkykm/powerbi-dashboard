@@ -1,6 +1,6 @@
 # PowerBi Viewer
 
-[PowerBI][https://app.powerbi.comdashbaord]のdashboard埋め込みwebアプリ。  
+[PowerBI](https://app.powerbi.comdashbaord)のdashboard埋め込みwebアプリ。  
 PowerBIで作ったダッシュボードはPower BI Proのサブスクリプション(1090円/人月)が無いと作成者以外は閲覧することができません。  
 このアプリを使うことで作成者のユーザクレデンシャルを共通して使用することで複数人で閲覧することが可能となります。  
 
